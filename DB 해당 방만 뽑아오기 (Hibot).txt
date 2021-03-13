@@ -1,0 +1,19 @@
+function sqlQuery(con, query, selectionArgs){
+	if(typeof selectionArgs !== 'object') selectionArgs = [];
+	let cursor = con.rawQuery(query, selectionArgs);
+	let columns = cursor.getColumnNames();
+	let result = [];
+	if(!cursor.moveToFirst()){
+		cursor.close();
+		return [];
+	}
+	do {
+		let obj = new JSONObject();
+		for (let i = 0; i < columns.length; i ++) {
+			obj.put(columns[i], cursor.getString(i));
+		}
+		result.push(obj);
+	}while (cursor.moveToNext());
+	cursor.close();
+	return result;
+}
