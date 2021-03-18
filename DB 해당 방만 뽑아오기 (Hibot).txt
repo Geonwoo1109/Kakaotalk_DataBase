@@ -17,3 +17,5 @@ function sqlQuery(con, query, selectionArgs) {
 	cursor.close();
 	return result;
 }
+
+sqlQuery(db, 'SELECT * FROM chat_logs WHERE chat_id=? ORDER BY created_at DESC LIMIT ?', [roomId, count]);
