@@ -1,9 +1,9 @@
-function sqlQuery(con, query, selectionArgs){
+function sqlQuery(con, query, selectionArgs) {
 	if(typeof selectionArgs !== 'object') selectionArgs = [];
 	let cursor = con.rawQuery(query, selectionArgs);
 	let columns = cursor.getColumnNames();
 	let result = [];
-	if(!cursor.moveToFirst()){
+	if(!cursor.moveToFirst()) {
 		cursor.close();
 		return [];
 	}
@@ -13,7 +13,7 @@ function sqlQuery(con, query, selectionArgs){
 			obj.put(columns[i], cursor.getString(i));
 		}
 		result.push(obj);
-	}while (cursor.moveToNext());
+	} while (cursor.moveToNext());
 	cursor.close();
 	return result;
 }
