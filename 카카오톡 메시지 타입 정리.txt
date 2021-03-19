@@ -1,3 +1,39 @@
-// https://github.com/junhyukso/rhinoKakaoTalkDBDecrypter/blob/master/KDBManager.js
-
-0: room enter/leave, 1: message, 2: photo, 3: video, 5: voice, 6: emoticon(gif), 12: emoticon(png), 14: vote?, 16: location, 17: profile, 18: long text, 20: emoticon(webp), 22: emoticon?, 23: #search, 24: notice?, 25: emotice(webp)?, 26: reply, 27: photo group,  71: ??, 98: notice, 16386: deleted photo
+0: 피드 2>퇴장, 4>입장, 6>강퇴, 13>가려진 메시지입니다.14>삭제된 메시지입니다.
+1: message,
+2: photo, 
+3: video, 
+4. 연락처
+5: voice,
+6: emoticon(gif),
+7. 선물하기(디지털 아이템 선물)
+9. 링크
+10. 구 위치
+11. 아바타
+12: emoticon(png), 스티커(효과x)
+13. 일정
+14: vote?, 투표
+15: ???
+16: location, 
+17: profile,
+18: long text, 파일(?)
+20: emoticon(webp), 움직이기만 함
+22: emoticon?, 모름
+23: #search, 
+24: notice?, 포스트!
+25: emotice(webp)?,움직이는 스티커+소리
+26: reply, 
+27: photo group,
+71: ??, 카링Leverage
+72: 알림톡
+81: 플러스
+82: 플러스 이벤트
+83: 플러스 바이럴
+96: 오픈채팅 일정
+97: 오픈채팅 투표
+98: notice, 오픈채팅 포스트
+16385: 삭제된 메시지
+16386: deleted photo (사진 1장)
+16387: 삭제된 동영상 하나
+16396: 삭제된 이모티콘(12번)
+16404: 삭제된 이모티콘(20번)
+16411: 자삭한 묶음사진
