@@ -58,78 +58,8 @@ const IvParameterSpec = javax.crypto.spec.IvParameterSpec;
 const PBEKeySpec = javax.crypto.spec.PBEKeySpec;
 const SecretKeyFactory = javax.crypto.SecretKeyFactory;
 const SecretKeySpec = javax.crypto.spec.SecretKeySpec;
-const JSONObject = org.json.JSONObject;/*
-getUserData = function (user_id) {
-        try {
-            let cursor = db_2.rawQuery(('SELECT * FROM friends WHERE id=' + user_id), null),
-                data = new Object(),
-                columns = [
-                    '_id', 'contact_id', 'id', 'type', 'uuid', 'phone_number', 'raw_phone_number','name',
-                    'phonetic_name','profle_image_url', 'full_profile_image_url', 'original_profile_image_url',
-                    'status_message', 'chat_id', 'brand_new', 'blocked', 'favorite', 'position', 'v', 'board_v',
-                    'ext', 'nick_name', 'user_type', 'story_user_id', 'accout_id', 'linked_services', 'hidden',
-                    'purged', 'suspended', 'member_type', 'involved_chat_ids', 'contact_name', 'enc', 'created_at',
-                    'new_badge_updated_at', 'new_badge_seen_at', 'status_action_token'
-                ];
-    
-    
-            cursor.moveToNext();
-            columns.forEach((e, i) => data[e] = cursor.getString(i));
-            cursor.close();
+const JSONObject = org.json.JSONObject;
 
-            return decrypt(this.key, data.enc, data.name);
-        } catch (e) {
-            return "abc";
-        }
-    };*/
-    /*
-//============================================================
-function getUserdata(user_id) {
-
-try {
-
-let cursor = db2.rawQuery("SELECT * FROM friends WHERE id=" + user_id, null);
-
-cursor.moveToNext();
-
-let data = {};
-
-let columns = ["_id", "contact_id", "id", "type", "uuid", "phone_number", "raw_phone_number", "name", "phonetic_name", "profle_image_url", "full_profile_image_url", "original_profile_image_url", "status_message", "chat_id", "brand_new", "blocked", "favorite", "position", "v", "board_v", "ext", "nick_name", "user_type", "story_user_id", "accout_id", "linked_services", "hidden", "purged", "suspended", "member_type", "involved_chat_ids", "contact_name", "enc", "created_at", "new_badge_updated_at", "new_badge_seen_at", "status_action_token"];
-
-for (let i = 0; i < columns.length; i++) {
-
-data[columns[i]] = cursor.getString(i);
-
-}
-
-enc = data["enc"];
-
-data["name"] = decrypt(user_id, enc, data["name"]);
-
-data["profle_image_url"] = decrypt(user_id, enc, data["profle_image_url"]);
-
-data["full_profile_image_url"] = decrypt(user_id, enc, data["full_profile_image_url"]);
-
-data["original_profile_image_url"] = decrypt(user_id, enc, data["original_profile_image_url"]);
-
-data["board_v"] = decrypt(user_id, enc, data["board_v"]);
-
-data["nick_name"] = decrypt(user_id, enc, data["nick_name"]);
-
-data["status_message"] = decrypt(user_id, enc, data["status_message"]);
-
-cursor.close();
-
-return data;
-
-} catch (e) {
-
-return "aaa";
-
-}
-
-}*/
-//============================================================
 //방이름 불러오는놈
 function getRoomName(chat_id) {
 
@@ -172,29 +102,7 @@ return null;
 }
 
 }
-//============================================================
-/*
-function getRoom(chat_id){
-if(!room[chat_id]){
-dbt = android.database.sqlite.SQLiteDatabase.openDatabase(mPath2, null, android.database.sqlite.SQLiteDatabase.CREATE_IF_NECESSARY);
-var cursor=db.rawQuery("select link_id from chat_rooms where id="+chat_id,null)
-var link=getR(cursor)
-var cursor=dbt.rawQuery("select name from open_link where id="+link,null)
-room[chat_id]=getR(cursor)
-dbt.close()
-}
-}
 
-function getUser(user_id){
-if(!user[user_id]){
-dbt = android.database.sqlite.SQLiteDatabase.openDatabase(mPath2, null, android.database.sqlite.SQLiteDatabase.CREATE_IF_NECESSARY);
-var cursor=dbt.rawQuery("select name,v,enc from friends where id="+user_id,null)
-tmp=getU(cursor)
-Log.d(JSON.stringify(tmp))
-Log.d(Decrypt(ownKey,tmp.enc,tmp.v))
-dbt.close()
-}
-}*/
 //사람이름 불러오기 My_Key에 봇 아이디 넣어야함
 var My_Key = "349837547";
 function getUserName(user_id, json) {
