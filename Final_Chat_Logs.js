@@ -130,7 +130,7 @@ function sqlQuery(con, query, selectionArgs) { try {
 /*---복호화 끝, 메시지 담기 시작---*/
      
 
-
+//로그 메시지는 가져올 때 수정 
 
      log.push(
        getUserName(json.user_id) + " | " + json.v.c + n
